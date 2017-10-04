@@ -40,6 +40,33 @@ a {
   color: #fff;
 }
 
+.home_link {
+  color: red;
+}
+
+.contact-info {
+  display: block;
+  font-weight: normal;
+  width: 100%;
+  color: #000;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.actions {
+  text-align: left;
+  font-weight: normal;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 50px;
+  color: blue;
+}
+
+.actions a {
+  font-size: 1em;
+  color: blue;
+}
+
 .contact {
   background-color: #6ED3CF;
   color: #000;
