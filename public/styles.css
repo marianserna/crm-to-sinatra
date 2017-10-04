@@ -41,7 +41,12 @@ a {
 }
 
 .home_link {
-  color: red;
+  color: #1098F7;
+  font-size: 1.1em;
+  display: block;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .contact-info {
@@ -59,12 +64,12 @@ a {
   padding-top: 5px;
   padding-bottom: 5px;
   margin-left: 50px;
-  color: blue;
+  color: #1098F7;
 }
 
 .actions a {
   font-size: 1em;
-  color: blue;
+  color: #1098F7;
 }
 
 .contact {
@@ -79,6 +84,11 @@ a {
   padding-bottom: 5px;
   text-align: center;
   margin: 10px;
+}
+
+.about {
+  font-size: 1.3em;
+  margin-left: 50px;
 }
 
 footer {
