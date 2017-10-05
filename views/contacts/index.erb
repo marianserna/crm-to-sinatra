@@ -13,9 +13,15 @@
       </a>
 
       <div class="actions">
-        <a href="/contacts/<%= contact.id %>/edit" class="edit-link">edit</a>
-        |
-        <a href="/contacts/<%= contact.id %>/delete" class="delete-link">delete</a>
+        <form class="" action="/contacts/<%= contact.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <a href="/contacts/<%= contact.id %>/edit" class="edit-link">edit</a>
+          |
+          <button type="submit" name="button">delete</button>
+        </form>
+
+
+
       </div>
     </li>
 

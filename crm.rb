@@ -10,11 +10,13 @@ get '/about' do
   erb :about
 end
 
+# new
 get '/contacts/new' do
   @contact = Contact.new
   erb :"contacts/new"
 end
 
+# create
 post '/contacts' do
   # raise params.inspect
   @contact = Contact.new({
@@ -31,6 +33,7 @@ post '/contacts' do
   end
 end
 
+# edit
 get '/contacts/:id/edit' do
   begin
     @contact = Contact.find(params[:id])
@@ -40,6 +43,7 @@ get '/contacts/:id/edit' do
   end
 end
 
+# update
 put '/contacts/:id' do
   @contact = Contact.find(params[:id])
   @contact.update({
@@ -56,12 +60,14 @@ put '/contacts/:id' do
   end
 end
 
+# index
 get '/contacts' do
   @contacts = Contact.all
   # raise @contacts.inspect
   erb :"contacts/index"
 end
 
+# show
 get '/contacts/:id' do
   begin
     @contact = Contact.find(params[:id])
@@ -76,6 +82,17 @@ get '/contacts/:id' do
   # else
   #   raise Sinatra::NotFound
   # end
+end
+
+# delete
+delete '/contacts/:id' do
+  begin
+    @contact = Contact.find(params[:id])
+    @contact.delete
+    redirect to('/contacts')
+  rescue ActiveRecord::RecordNotFound
+    raise Sinatra::NotFound
+  end
 end
 
 # MiniRecord config
