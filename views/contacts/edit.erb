@@ -1,0 +1,11 @@
+<h2>Editing Contact</h2>
+
+<form action="/contacts/<%= @contact.id %>" method="post" >
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="contact[first_name]" value="<%= @contact.first_name %>" placeholder="First Name">
+  <input type="text" name="contact[last_name]" value="<%= @contact.last_name %>" placeholder="Last Name">
+  <input type="email" name="contact[email]" value="<%= @contact.email %>" placeholder="Email">
+  <textarea name="contact[note]" placeholder="Note"><%= @contact.note %></textarea>
+  <button type="submit" name="button">SAVE</button>
+  <a href="/contacts" class="cancel-button">Cancel</a>
+</form>

@@ -40,11 +40,10 @@ a {
   color: #fff;
 }
 
-.home_link {
+.home_link, .add_contact_link {
   color: #1098F7;
   font-size: 1.1em;
   display: block;
-  width: 100%;
   margin-top: 50px;
   text-align: center;
 }
@@ -67,7 +66,7 @@ a {
   color: #1098F7;
 }
 
-.actions a {
+.actions a, .cancel-button {
   font-size: 1em;
   color: #1098F7;
 }
