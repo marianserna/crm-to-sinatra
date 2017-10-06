@@ -15,15 +15,11 @@
       <div class="actions">
         <form class="" action="/contacts/<%= contact.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <a href="/contacts/<%= contact.id %>/edit" class="edit-link">edit</a>
-          |
-          <button type="submit" name="button">delete</button>
+          <a href="/contacts/<%= contact.id %>/edit" class="edit-link">Edit</a>
+          <button class="delete-button" type="submit" name="button">Delete</button>
         </form>
       </div>
     </li>
 
   <% end %>
 </ul>
-
-<a href="/" class="home_link">Home</a>
-<a href="/contacts/new" class="add_contact_link">Add Contact</a>

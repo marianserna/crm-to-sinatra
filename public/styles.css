@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   width: 85vw;
   min-height: 100vh;
@@ -37,16 +41,14 @@ ul li {
 a {
   font-size: 1.2em;
   text-decoration: none;
-  color: #fff;
+  display: inline-block;
 }
 
-.home_link, .add_contact_link {
-  color: #1098F7;
-  font-size: 1.1em;
-  display: block;
-  margin-top: 50px;
-  text-align: center;
-}
+ p {
+   font-size: 20px;
+   text-align: center;
+   margin-top: 20px;
+ }
 
 .contact-info {
   display: block;
@@ -66,9 +68,35 @@ a {
   color: #1098F7;
 }
 
-.actions a, .cancel-button {
+.links {
+  margin: 30px;
+}
+
+.actions a,
+.actions button,
+.home_link,
+.add_contact_link,
+.create_button,
+.save_button,
+.cancel_button {
   font-size: 1em;
-  color: #1098F7;
+  background-color: transparent;
+  border: 2px solid #9068BE;
+  padding: 10px 15px;
+  color: #323232;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.actions:hover,
+.actions button:hover,
+.home_link:hover,
+.add_contact_link:hover,
+.save_button:hover,
+.cancel_button:hover,
+.create_button {
+  cursor: pointer;
 }
 
 .contact {
@@ -88,6 +116,47 @@ a {
 .about {
   font-size: 1.3em;
   margin-left: 50px;
+}
+
+.new, .edit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 18px;
+  color: #9068BE;
+  margin-top: 20px;
+  padding: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 20px;
+  font-size: 16px;
+  border: solid 2px #6ED3CF;
+}
+
+textarea {
+  margin-bottom: 30px;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.new_actions {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 footer {

@@ -1,15 +1,19 @@
 <h1>Search</h1>
 
 <form class="search" action="/search" method="get">
-  <label for="search_by">Search by: </label>
-  <select id="search_by" name="search_field">
-    <option value="first_name" <%= params[:search_field] == "first_name" ? 'selected' : nil %>>First Name</option>
-    <option value="last_name" <%= params[:search_field] == "last_name" ? 'selected' : nil %>>Last Name</option>
-    <option value="email" <%= params[:search_field] == "email" ? 'selected' : nil %>>Email</option>
-  </select>
+  <label for="search_by">
+    <span>Search by:</span>
+    <select id="search_by" name="search_field">
+      <option value="first_name" <%= params[:search_field] == "first_name" ? 'selected' : nil %>>First Name</option>
+      <option value="last_name" <%= params[:search_field] == "last_name" ? 'selected' : nil %>>Last Name</option>
+      <option value="email" <%= params[:search_field] == "email" ? 'selected' : nil %>>Email</option>
+    </select>
+  </label>
 
-  <label for="query">Enter current Value</label>
-  <input id="query" type="text" name="q" value="<%= params[:q] %>">
+  <label for="query">
+    <span>Enter current Value</span>
+    <input id="query" type="text" name="q" value="<%= params[:q] %>">
+  </label>
 </form>
 
 <% if @search -%>

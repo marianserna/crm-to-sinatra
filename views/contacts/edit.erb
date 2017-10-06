@@ -1,31 +1,35 @@
-<h2>Editing Contact</h2>
+<h1>Edit Contact</h1>
 
-<form action="/contacts/<%= @contact.id %>" method="post" >
+<form class="edit" action="/contacts/<%= @contact.id %>" method="post" >
   <input type="hidden" name="_method" value="put">
 
-  <label for="irst_name">
+  <label for="edit_contact_first_name">
     <span>First Name</span>
-    <input id="first_name" type="text" name="contact[first_name]" value="<%= @contact.first_name %>" placeholder="First Name">
+    <input id="edit_contact_first_name" type="text" name="contact[first_name]" value="<%= @contact.first_name %>" placeholder="First Name">
   </label>
 
-  <label for="last_name">
+  <label for="edit_contact_last_name">
     <span>Last Name</span>
-    <input id="last_name" type="text" name="contact[last_name]" value="<%= @contact.last_name %>" placeholder="Last Name">
+    <input id="edit_contact_last_name" type="text" name="contact[last_name]" value="<%= @contact.last_name %>" placeholder="Last Name">
   </label>
 
-  <label for="email">
+  <label for="edit_contact_email">
     <span>Email</span>
-    <input id="email" type="email" name="contact[email]" value="<%= @contact.email %>" placeholder="Email">
+    <input id="edit_contact_email" type="email" name="contact[email]" value="<%= @contact.email %>" placeholder="Email">
   </label>
 
-  <textarea name="contact[note]" placeholder="Note"><%= @contact.note %></textarea>
+  <label for="edit_contact_note">
+    <span>Note</span>
+    <textarea name="contact[note]" placeholder="Note"><%= @contact.note %></textarea>
+  </label>
 
   <label for="user-active">
     <span>User Active?</span>
     <input type="checkbox" name="" id="user-active" checked="true">
   </label>
 
-  <button type="submit" name="button">SAVE</button>
-
-  <a href="/contacts" class="cancel-button">Cancel</a>
+  <div class="new_actions">
+    <button class="save_button" type="submit" name="button">Save</button>
+    <a href="/contacts" class="cancel_button">Cancel</a>
+  </div>
 </form>

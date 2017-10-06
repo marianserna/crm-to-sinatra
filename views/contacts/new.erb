@@ -1,10 +1,29 @@
-<h2>New Contact</h2>
+<h1>New Contact</h1>
 
-<form action="/contacts" method="post" >
-  <input type="text" name="contact[first_name]" value="<%= @contact.first_name %>" placeholder="First Name">
-  <input type="text" name="contact[last_name]" value="<%= @contact.last_name %>" placeholder="Last Name">
-  <input type="email" name="contact[email]" value="<%= @contact.email %>" placeholder="Email">
-  <textarea name="contact[note]" placeholder="Note"><%= @contact.note %></textarea>
-  <button type="submit" name="button">CREATE</button>
-  <a href="/contacts" class="cancel-button">Cancel</a>
+<form id="new" action="/contacts" method="post" >
+  <label for="new_contact_first_name">
+    <span>First Name</span>
+    <input id="new_contact_first_name" type="text" name="contact[first_name]" value="<%= @contact.first_name %>" placeholder="First Name">
+  </label>
+
+  <label for="new_contact_last_name">
+    <span>Last Name</span>
+    <input id="new_contact_last_name" type="text" name="contact[last_name]" value="<%= @contact.last_name %>" placeholder="Last Name">
+  </label>
+
+  <label for="new_contact_email">
+    <span>Email</span>
+    <input id="new_contact_email" type="email" name="contact[email]" value="<%= @contact.email %>" placeholder="Email">
+  </label>
+
+  <label for="new_contact_note">
+    <span>Note</span>
+    <textarea id="new_contact_note" name="contact[note]" placeholder="Note"><%= @contact.note %></textarea>
+  </label>
+
+  <div class="new_actions">
+    <button class="create_button" type="submit" name="button">Create</button>
+    <a href="/contacts" class="cancel_button">Cancel</a>
+  </div>
+
 </form>
