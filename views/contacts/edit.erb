@@ -25,7 +25,7 @@
 
   <label for="user-active">
     <span>User Active?</span>
-    <input type="checkbox" name="" id="user-active" checked="true">
+    <input type="checkbox" name="contact[is_active]" id="user-active" value="1" <%= @contact.is_active ? 'checked' : nil %>>
   </label>
 
   <div class="new_actions">

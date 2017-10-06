@@ -130,17 +130,24 @@ label {
   color: #9068BE;
   margin-top: 20px;
   padding: 20px;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-input, textarea {
+input, textarea, .select_search {
   width: 100%;
   margin-top: 12px;
   padding: 20px;
   font-size: 16px;
   border: solid 2px #6ED3CF;
+}
+
+.select_search {
+  /*box-sizing: content-box;*/
+  /*height: 60px;*/
+  -webkit-appearance: none;
+ -webkit-border-radius: 0px;
 }
 
 textarea {
@@ -149,7 +156,8 @@ textarea {
 
 button:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none;
 }
 

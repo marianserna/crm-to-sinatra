@@ -3,7 +3,7 @@
 <form class="search" action="/search" method="get">
   <label for="search_by">
     <span>Search by:</span>
-    <select id="search_by" name="search_field">
+    <select class="select_search" id="search_by" name="search_field">
       <option value="first_name" <%= params[:search_field] == "first_name" ? 'selected' : nil %>>First Name</option>
       <option value="last_name" <%= params[:search_field] == "last_name" ? 'selected' : nil %>>Last Name</option>
       <option value="email" <%= params[:search_field] == "email" ? 'selected' : nil %>>Email</option>

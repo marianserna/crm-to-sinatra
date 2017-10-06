@@ -23,7 +23,8 @@ post '/contacts' do
     first_name: params["contact"]["first_name"],
     last_name: params["contact"]["last_name"],
     email: params["contact"]["email"],
-    note: params["contact"]["note"]
+    note: params["contact"]["note"],
+    is_active: params["contact"]["is_active"]
   })
 
   if @contact.save
@@ -57,7 +58,8 @@ put '/contacts/:id' do
     first_name: params["contact"]["first_name"],
     last_name: params["contact"]["last_name"],
     email: params["contact"]["email"],
-    note: params["contact"]["note"]
+    note: params["contact"]["note"],
+    is_active: params["contact"]["is_active"]
   })
 
   if @contact.save
@@ -95,6 +97,7 @@ delete '/contacts/:id' do
   end
 end
 
+# search
 get '/search' do
   # @contacts = case params[:search_field]
   # when "first_name"

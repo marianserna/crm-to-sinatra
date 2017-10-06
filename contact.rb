@@ -10,6 +10,7 @@ class Contact < ActiveRecord::Base
   field :last_name, as: :string
   field :email, as: :string
   field :note, as: :text
+  field :is_active, as: :boolean
 
   validates :first_name, :last_name, :email, presence: true
 
