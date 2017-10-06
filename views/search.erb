@@ -1,0 +1,27 @@
+<h1>Search</h1>
+
+<form class="search" action="/search" method="get">
+  <label for="search_by">Search by: </label>
+  <select id="search_by" name="search_field">
+    <option value="first_name" <%= params[:search_field] == "first_name" ? 'selected' : nil %>>First Name</option>
+    <option value="last_name" <%= params[:search_field] == "last_name" ? 'selected' : nil %>>Last Name</option>
+    <option value="email" <%= params[:search_field] == "email" ? 'selected' : nil %>>Email</option>
+  </select>
+
+  <label for="query">Enter current Value</label>
+  <input id="query" type="text" name="q" value="<%= params[:q] %>">
+</form>
+
+<% if @search -%>
+  <ul>
+    <% if @contacts.empty? -%>
+      <li>No Contacts Found. Whoopsies!</li>
+    <% end -%>
+
+    <% @contacts.each do |contact| -%>
+      <li class="contact">
+        <a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %> | <%= contact.email %></a>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>

@@ -33,6 +33,13 @@ post '/contacts' do
   end
 end
 
+# index
+get '/contacts' do
+  @contacts = Contact.all
+  # raise @contacts.inspect
+  erb :"contacts/index"
+end
+
 # edit
 get '/contacts/:id/edit' do
   begin
@@ -58,13 +65,6 @@ put '/contacts/:id' do
   else
     erb :"contacts/:id"
   end
-end
-
-# index
-get '/contacts' do
-  @contacts = Contact.all
-  # raise @contacts.inspect
-  erb :"contacts/index"
 end
 
 # show
@@ -93,6 +93,28 @@ delete '/contacts/:id' do
   rescue ActiveRecord::RecordNotFound
     raise Sinatra::NotFound
   end
+end
+
+get '/search' do
+  # @contacts = case params[:search_field]
+  # when "first_name"
+  #   # Contact.where(first_name: params[:q])
+  #   Contact.where("first_name like ?", "%#{params[:q]}%")
+  # when "last_name"
+  #   Contact.where("last_name like ?", "%#{params[:q]}%")
+  # when "email"
+  #   Contact.where("email like ?", "%#{params[:q]}%")
+  # else
+  #   []
+  # end
+  if ["first_name", "last_name", "email"].include?(params[:search_field])
+    @contacts = Contact.where("#{params[:search_field]} like ?", "%#{params[:q]}%")
+    @search = true
+  else
+    @search = false
+  end
+
+  erb :search
 end
 
 # MiniRecord config
