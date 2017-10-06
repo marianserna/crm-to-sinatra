@@ -2,18 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>CRM - Sinatra</title>
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/contacts">Contacts</a>
+        </li>
+        <li>
+          <a href="/search">Search</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+
     <%= yield %>
 
-    <div class="links">
+    <!-- <div class="links">
       <a href="/" class="home_link">Home</a>
       <a href="/contacts/new" class="add_contact_link">Add Contact</a>
-    </div>
+    </div> -->
     <footer>
       &copy; Bitmaker 2016
     </footer>
